@@ -1,0 +1,35 @@
+[2023-11-29 18:43:15,020] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-11-29 18:43:16,748] [WARNING] [runner.py:203:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2023-11-29 18:43:16,748] [INFO] [runner.py:570:main] cmd = /opt/conda/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None eval.py --data_path ./data/alzheimer/HCP_WM --tensorboard_path ./eval_results --deepspeed --per_device_train_batch_size 128 --per_device_eval_batch_size 128 --num_train_epochs 500 --test_env 0 --input_dim 268 --hidden_dim 268 --mlp_dim 1072 --num_heads 4 --layers 12 --seq_len 64 --downsample_rate 1 --model_name_or_path Vanilla_FT_keep_5 --output_dir ./eval_results
+[2023-11-29 18:43:18,548] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_DEV_PACKAGE=libnccl-dev=2.13.4-1+cuda11.7
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_DEV_PACKAGE_VERSION=2.13.4-1
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NCCL_VERSION=2.13.4-1
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_DEV_PACKAGE_NAME=libnccl-dev
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_PACKAGE=libnccl2=2.13.4-1+cuda11.7
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_PACKAGE_NAME=libnccl2
+[2023-11-29 18:43:20,229] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_PACKAGE_VERSION=2.13.4-1
+[2023-11-29 18:43:20,229] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0]}
+[2023-11-29 18:43:20,229] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=1, node_rank=0
+[2023-11-29 18:43:20,229] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
+[2023-11-29 18:43:20,229] [INFO] [launch.py:163:main] dist_world_size=1
+[2023-11-29 18:43:20,229] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+[2023-11-29 18:43:22,535] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(data_path='./data/alzheimer/HCP_WM', model_name_or_path='Vanilla_FT_keep_5', per_device_train_batch_size=128, per_device_eval_batch_size=128, learning_rate=5e-05, weight_decay=0.0, num_train_epochs=500, gradient_accumulation_steps=1, lr_scheduler_type=<SchedulerType.COSINE: 'cosine'>, num_warmup_steps=0, output_dir='./eval_results', seed=1234, local_rank=0, gradient_checkpointing=False, offload=False, zero_stage=0, lora_learning_rate=0.0005, enable_tensorboard=False, tensorboard_path='./eval_results', hidden_dim=268, input_dim=268, mlp_dim=1072, num_heads=4, layers=12, seq_len=64, dropout_rate=0.0, downsample_rate=1, test_env=0, before=False, skip_5=False, update=False, num_samples_per_class=50, deepspeed=True, deepspeed_config=None, deepscale=False, deepscale_config=None, deepspeed_mpi=False)
+[2023-11-29 18:43:24,992] [INFO] [comm.py:637:init_distributed] cdb=None
+[2023-11-29 18:43:24,992] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+device cuda:0
+--------------Test Env:  0 -----------------
+Loading data from ./data/alzheimer/HCP_WM/Scan1/processed_data.npy and ./data/alzheimer/HCP_WM/Scan1/processed_labels.npy
+Loading data from ./data/alzheimer/HCP_WM/Scan2/processed_data.npy and ./data/alzheimer/HCP_WM/Scan2/processed_labels.npy
+No intersection
+load model from Vanilla_FT_keep_5/pytorch_model.bin
+=========> Evaluation Result <=========
+len eval set 10254
+Overall Accuracy:  0.5620245757753072
+Per Class Accuracy:  {5: 0.996873223422399, 13: 0.3503562945368171, 11: 0.28859857482185275, 2: 0.8966745843230404, 17: 0.20783847980997625, 15: 0.32185273159144895, 4: 0.17220902612826602, 9: 0.23990498812351543, 7: 0.20190023752969122}
+len train set 11184
+=========> Training Result <=========
+Overall Accuracy:  0.6007689556509299
+Per Class Accuracy:  {5: 0.9991952789699571, 9: 0.44849785407725323, 13: 0.43991416309012876, 17: 0.6534334763948498, 2: 0.1684549356223176, 7: 0.20708154506437768, 4: 0.2017167381974249, 15: 0.22532188841201717, 11: 0.8680257510729614}
+[2023-11-29 18:43:38,249] [INFO] [launch.py:347:main] Process 3621882 exits successfully.

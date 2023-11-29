@@ -1,0 +1,133 @@
+[2023-11-29 18:46:37,263] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-11-29 18:46:38,968] [WARNING] [runner.py:203:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2023-11-29 18:46:38,968] [INFO] [runner.py:570:main] cmd = /opt/conda/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None eval.py --data_path ./data/alzheimer/HCP_WM --tensorboard_path ./eval_results --deepspeed --per_device_train_batch_size 128 --per_device_eval_batch_size 128 --num_train_epochs 500 --test_env 0 --input_dim 268 --hidden_dim 268 --mlp_dim 1072 --num_heads 4 --layers 12 --seq_len 64 --downsample_rate 1 --model_name_or_path Vanilla_FT --skip_5 --before --output_dir ./eval_results
+[2023-11-29 18:46:40,788] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_DEV_PACKAGE=libnccl-dev=2.13.4-1+cuda11.7
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_DEV_PACKAGE_VERSION=2.13.4-1
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NCCL_VERSION=2.13.4-1
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_DEV_PACKAGE_NAME=libnccl-dev
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_PACKAGE=libnccl2=2.13.4-1+cuda11.7
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_PACKAGE_NAME=libnccl2
+[2023-11-29 18:46:42,480] [INFO] [launch.py:138:main] 0 NV_LIBNCCL_PACKAGE_VERSION=2.13.4-1
+[2023-11-29 18:46:42,480] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0]}
+[2023-11-29 18:46:42,480] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=1, node_rank=0
+[2023-11-29 18:46:42,480] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
+[2023-11-29 18:46:42,480] [INFO] [launch.py:163:main] dist_world_size=1
+[2023-11-29 18:46:42,480] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+[2023-11-29 18:46:44,789] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Namespace(data_path='./data/alzheimer/HCP_WM', model_name_or_path='Vanilla_FT', per_device_train_batch_size=128, per_device_eval_batch_size=128, learning_rate=5e-05, weight_decay=0.0, num_train_epochs=500, gradient_accumulation_steps=1, lr_scheduler_type=<SchedulerType.COSINE: 'cosine'>, num_warmup_steps=0, output_dir='./eval_results', seed=1234, local_rank=0, gradient_checkpointing=False, offload=False, zero_stage=0, lora_learning_rate=0.0005, enable_tensorboard=False, tensorboard_path='./eval_results', hidden_dim=268, input_dim=268, mlp_dim=1072, num_heads=4, layers=12, seq_len=64, dropout_rate=0.0, downsample_rate=1, test_env=0, before=True, skip_5=True, update=False, num_samples_per_class=50, deepspeed=True, deepspeed_config=None, deepscale=False, deepscale_config=None, deepspeed_mpi=False)
+[2023-11-29 18:46:47,271] [INFO] [comm.py:637:init_distributed] cdb=None
+[2023-11-29 18:46:47,271] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+device cuda:0
+--------------Test Env:  0 -----------------
+Processing data from ./data/alzheimer/HCP_WM/Scan1
+File index 1015 not found in labels
+File index 1032 not found in labels
+File index 1037 not found in labels
+File index 149 not found in labels
+File index 209 not found in labels
+File index 225 not found in labels
+File index 294 not found in labels
+File index 318 not found in labels
+File index 394 not found in labels
+File index 401 not found in labels
+Warning: NaN or Inf found in 440.csv
+File index 454 not found in labels
+File index 555 not found in labels
+File index 576 not found in labels
+File index 595 not found in labels
+File index 640 not found in labels
+File index 652 not found in labels
+File index 680 not found in labels
+File index 689 not found in labels
+File index 707 not found in labels
+File index 739 not found in labels
+File index 747 not found in labels
+File index 828 not found in labels
+File index 869 not found in labels
+File index 878 not found in labels
+File index 910 not found in labels
+File index 924 not found in labels
+File index 982 not found in labels
+Saved processed data to ./data/alzheimer/HCP_WM/Scan1/processed_data_skip5.npy and ./data/alzheimer/HCP_WM/Scan1/processed_labels_skip5.npy
+Processing data from ./data/alzheimer/HCP_WM/Scan2
+File index 1004 not found in labels
+File index 1009 not found in labels
+File index 1015 not found in labels
+File index 1036 not found in labels
+File index 1037 not found in labels
+File index 1046 not found in labels
+File index 1070 not found in labels
+File index 121 not found in labels
+File index 130 not found in labels
+File index 142 not found in labels
+File index 148 not found in labels
+File index 149 not found in labels
+File index 171 not found in labels
+File index 197 not found in labels
+File index 209 not found in labels
+File index 211 not found in labels
+File index 220 not found in labels
+File index 225 not found in labels
+File index 230 not found in labels
+File index 265 not found in labels
+File index 270 not found in labels
+File index 276 not found in labels
+File index 294 not found in labels
+File index 316 not found in labels
+File index 318 not found in labels
+File index 324 not found in labels
+File index 350 not found in labels
+File index 354 not found in labels
+File index 369 not found in labels
+File index 382 not found in labels
+File index 393 not found in labels
+File index 408 not found in labels
+File index 454 not found in labels
+File index 459 not found in labels
+File index 460 not found in labels
+File index 462 not found in labels
+File index 491 not found in labels
+File index 493 not found in labels
+File index 520 not found in labels
+File index 522 not found in labels
+File index 533 not found in labels
+File index 544 not found in labels
+File index 555 not found in labels
+File index 572 not found in labels
+File index 574 not found in labels
+File index 596 not found in labels
+File index 612 not found in labels
+File index 640 not found in labels
+File index 652 not found in labels
+File index 658 not found in labels
+File index 674 not found in labels
+File index 689 not found in labels
+File index 716 not found in labels
+File index 724 not found in labels
+File index 739 not found in labels
+File index 747 not found in labels
+File index 795 not found in labels
+File index 815 not found in labels
+File index 817 not found in labels
+File index 869 not found in labels
+File index 875 not found in labels
+File index 878 not found in labels
+File index 919 not found in labels
+File index 924 not found in labels
+File index 945 not found in labels
+File index 969 not found in labels
+File index 982 not found in labels
+File index 997 not found in labels
+Saved processed data to ./data/alzheimer/HCP_WM/Scan2/processed_data_skip5.npy and ./data/alzheimer/HCP_WM/Scan2/processed_labels_skip5.npy
+No intersection
+load model from Vanilla_FT/pytorch_model_before_ft.bin
+=========> Evaluation Result <=========
+len eval set 6736
+Overall Accuracy:  0.08194774346793349
+Per Class Accuracy:  {7: 0.010688836104513063, 4: 0.0332541567695962, 15: 0.0344418052256532, 11: 0.11401425178147269, 17: 0.11757719714964371, 9: 0.29572446555819476, 2: 0.0, 13: 0.0498812351543943}
+len train set 7456
+=========> Training Result <=========
+Overall Accuracy:  0.6082349785407726
+Per Class Accuracy:  {2: 0.5300429184549357, 17: 0.7027896995708155, 9: 0.4924892703862661, 15: 0.5525751072961373, 7: 0.9957081545064378, 11: 0.5439914163090128, 4: 0.5568669527896996, 13: 0.49141630901287553}
+[2023-11-29 18:47:26,527] [INFO] [launch.py:347:main] Process 3623601 exits successfully.
